@@ -55,10 +55,6 @@ we should pay attention to three design principles:
  * Evolvability: make it easy for engineers to make changes to the system
  in the future. This is closely linked to its simplicity and its abstractions.
 
-A quote I liked: “Scalability [...] is not a one-dimensional label that
-we can attach to a system: it is meaningless to say ‘X is scalable’ or
-‘Y doesn’t scale’.” (page 10)
-
 
 ### Chapter 2: Data Models and Query Languages
 
