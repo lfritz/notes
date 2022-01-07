@@ -11,7 +11,7 @@ Page 10:
 
 ## Jane Jacobs: The Death and Life of Great American Cities (1961)
 
-Chapter 1, page 12, talking about the state of city planning:
+Chapter 1, page 12, talking about city planners:
 
 > And to put it bluntly, they are all in the same stage of elaborately learned
 > superstition as medical science was early in the last century, when
@@ -20,3 +20,12 @@ Chapter 1, page 12, talking about the state of city planning:
 > its companion, the art of city design, have not yet broken with the specious
 > comfort of wishes, familiar superstitions, oversimplifications, and symbols,
 > and have not yet embarked upon the adventure of probing the real world.
+
+
+## John Ousterhout: A Philosophy of Software Design
+
+Chapter 2, page 6:
+
+> Complexity is more appearent to readers than to writers. If you write a piece
+> of code and it seems simple to you, but other people think it is complex, then
+> it is complex.
