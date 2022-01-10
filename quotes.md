@@ -29,3 +29,11 @@ Chapter 2, page 6:
 > Complexity is more appearent to readers than to writers. If you write a piece
 > of code and it seems simple to you, but other people think it is complex, then
 > it is complex.
+
+
+Chapter 3, page 14-15:
+
+> Most of the code in any system is written by extending the existing code base,
+> so your most important job as a developer is to facilitate those future
+> extensions. Thus, you should not thing of "working code" as your primary goal,
+> though of course your code must work.
