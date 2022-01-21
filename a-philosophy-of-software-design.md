@@ -106,3 +106,40 @@ decomposition, the structure of a system corresponds to the order in which opera
 often results in information leakage because most design decisions manifest at several different
 times over the life of an application. When designing modules, focus on the knowledge that's needed
 to perform each task, not the order in which tasks occur.
+
+
+## Chapter 6: General-Purpose Modules are Deeper
+
+One of the most common decisions that you will face when designing a new module is whether to
+implement it in a general-purpose or a special-purpose fashion. Specializing each module for today's
+needs and making it more general only once you discover additional uses that a generalized module
+could serve fits with an iterative approach, which seems like an argument for starting with
+specialized modules.
+
+However, general-purpose interfaces are often simpler and deeper than specialized ones, mostly
+because generality leads to better information hiding. John recommends building new modules in a
+*somewhat general-purpose* fashion. The interface should be easy to use for today's needs without
+being tied specifically to them. The word "somewhat" is important: don't get carried away and build
+something so general-purpose the it's difficult to use for your current needs.
+
+Here are some questions you can ask yourself to find the right balance between general-purpose and
+special-purpose:
+
+* What is the simplest interface that will cover all my current needs? If you reduce the number of
+  methods in an API without reducing its overall capabilities, then you are potentially creating
+  more general-purpose methods.
+* In how many situations will this method be used? If a method is designed for one particular use,
+  that's a red flag that it may be too special-purpose.
+* Is this API easy to use for my current needs? This question can help you determine when you have
+  gone too far in making an API simple and general-purpose.
+
+
+## Chapter 7: Different Layer, Different Abstraction
+
+Software systems have layers, where higher layers use the facilities provided by lower layers. If a
+layer implements a similar abstraction to the layer below, there's a good chance that it doesn't
+provide enough benefit for the complexity it adds.
+
+A red flag here are pass-through methods, which are methods that do nothing except pass their
+arguments to another method. The decorator (or wrapper) design pattern can also be a sign of
+interface duplication across layers.
