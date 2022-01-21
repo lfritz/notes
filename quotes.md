@@ -1,12 +1,18 @@
 # Quotes
 
 
+## John Gall: Systemantics (1978)
+
+> A complex system that works is invariably found to have evolved from a simple
+> system that works.
+
+
 ## Martin Kleppmann: Designing Data-Intensive Applications (2017)
 
 Page 10:
 
 > Scalability [...] is not a one-dimensional label that we can attach to a
-> system: it is meaningless to say "X is scalable" or "Y doesn’t scale".
+> system: it is meaningless to say "X is scalable" or "Y doesn't scale".
 
 
 ## Jane Jacobs: The Death and Life of Great American Cities (1961)
@@ -35,5 +41,5 @@ Chapter 3, page 14-15:
 
 > Most of the code in any system is written by extending the existing code base,
 > so your most important job as a developer is to facilitate those future
-> extensions. Thus, you should not thing of "working code" as your primary goal,
+> extensions. Thus, you should not think of "working code" as your primary goal,
 > though of course your code must work.
