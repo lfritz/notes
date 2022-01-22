@@ -143,3 +143,50 @@ provide enough benefit for the complexity it adds.
 A red flag here are pass-through methods, which are methods that do nothing except pass their
 arguments to another method. The decorator (or wrapper) design pattern can also be a sign of
 interface duplication across layers.
+
+
+## Chapter 8: Pull Complexity Downward
+
+When developing a module, it is often tempting to punt complexity to users of the module. If you're
+not sure how to deal with come condition, just throw an exception; if you don't know which policy
+will work best, just define some configuration parameters and let the user set them. This is usually
+the wrong thing to do: most modules have more users than developers, so it's better for developers
+to deal with an issue once. Another way to look at it is taht it's more important for a module to
+have a simple interface than a simple implementation.
+
+You can take this too far, though, and increase overall system complexity. Pulling complexity down
+makes the most sense if (a) the complexity being pulled down is closely related to the module's
+existing functionality, (b) pulling the complexity down will result in simplifications elsewhere in
+the application, and (c) pulling the complexity down simplifies the module's interface.
+
+
+## Chapter 9: Better Together or Better Apart?
+
+One of the most fundamental questions in software design is: given two pieces of functionality,
+should they be implemented together in the same place, or should their implementations be separated?
+This applies at all levels in a system, from functions to classes to services.
+
+The goal is always to reduce the complexity of the sytem as a whole and improve its modularity. It
+might appear that the best weay to achieve this is to divide the system into a large nubmer of small
+components: the smaller the components, the simpler each component is likely to be. However, the act
+of subdividing also creates additional complexity that wasn't present before: more components means
+more interfaces and often additional code to manage the components, and it may separate pieces of
+code that are closely related.
+
+In general, pick the structure that results in the best information hiding, the fewest dependencies,
+and the deepest interfaces. Some guidelines are:
+
+* Combine components if they share information, e.g. both depend on a particular file format.
+* Combine components if they're used together, i.e. anyone using one is like to also use the other,
+  and vice versa (it has to be bidirectional).
+* Bring modules together if the interface for the new module is simpler or easier to use than the
+  original interfaces. This often happens when the original modules each implement part of the
+  solution to a problem.
+* Separate general-purpose and special-purpose code. If a module contains a mechanism that can be
+  used for several different purposes, then it should provide just that one general-purpose
+  mechanism.
+* Each function should do one thing and do it completely. Splitting a function only makes sense if
+  it results in cleaner abstractions overall.
+
+A red flag is if two pieces of code are physically separated, but each implementation can only be
+understood by looking at the other.
