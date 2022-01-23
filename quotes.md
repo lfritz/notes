@@ -43,3 +43,8 @@ Chapter 3, page 14-15:
 > so your most important job as a developer is to facilitate those future
 > extensions. Thus, you should not think of "working code" as your primary goal,
 > though of course your code must work.
+
+
+Chapter 10, page 79:
+
+> one of my favorite sayings: "code that hasn't been executed doesn't work"

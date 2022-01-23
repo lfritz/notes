@@ -190,3 +190,70 @@ and the deepest interfaces. Some guidelines are:
 
 A red flag is if two pieces of code are physically separated, but each implementation can only be
 understood by looking at the other.
+
+
+## Chapter 10: Define Errors Out Of Existence
+
+Dealing with exceptions (or any other mechanism to signal errors) is one of the worst sources of
+complexity in programs. Code dealing with special conditions is inherently harder to write than code
+that deals with normal cases; exceptions disrupt the normal flow of the code; and error conditions
+are often hard to test. The best way to reduce the damage is to reduce the number of places where
+exceptions have to be handled. John presents three strategies to do so.
+
+The best one, where it is possible, is to define errors out of existence. For example, Java's
+substring method throws an exception if a given index is out of range. Instead, the method could
+have been defined to return the overlap between the string and the given indexes, so the error case
+simply disappears.
+
+The second technique is exception masking. With this approach, an exceptional condition is detected
+and handled at a low level, for example by retrying an operation, so the module's callers don't need
+to handle it. This results in deeper modules since it reduces the module's interface and adds
+functionality.
+
+The third technique is exception aggregation. The diea is so refactor your code to handle many
+exceptions in one place instead of writing many individual handlers.
+
+Finally, in some cases it's best to simply crash the application instead of invoking error handling.
+A good example is running out of memory.
+
+
+## Chapter 11: Design It Twice
+
+Designing software is hard, so it's unlikely that your first thoughts about how to structure a
+module or system will produce the best design. You'll end up with a much better result if you
+consider multiple options for each major design decision: design it twice.
+
+Try to pick approaches that are radically different from each other. Even if you think there's only
+one reasonable approach, consider a second design. It'll be instructive to compare the two options.
+After you've roughed out the designs, make a list of pros and cons for each.
+
+The most important consideration for an itnerface is ease of use for higher-level software. Other
+points worth considering:
+
+* Does one alternative have a simpler interface than the other?
+* Is one interface more general-purpose than another?
+* Does one interface enable a more efficient implementation than another?
+
+
+## Chapter 12: Why Write Comments? The Four Excuses
+
+In-code documentation plays a crucial role in software design. Comments capture information that
+was in the mind of the designer but couldn't be represented in code. Without comments, users must
+read the code implementing an interface to be able to use it, and then there is no abstraction.
+
+Unfortunately, a lot of code essentially has no comments. When developers don't write comments,
+they usually justify their behavior with one or more of these excuses:
+
+* "Good code is self-documenting." There are things you can do when writing code to reduce the need
+  for comments, but there is still a significant amount of design information that can't be
+  represented in code. A high-level description of what each function does, the rationale for a
+  particular design decision, or the conditions under which it makes sense to call a particular
+  method, can only be described in comments.
+* "I don't have time to write comments." The counter-argument is the investment mindset discussed in
+  chapter 3. In the long run, good documentation will speed up development.
+* "Comments get out of date and become misleading." Keeping documentation up-to-date actually
+  doesn't take much effort; updating comments for a change in the code usually takes much less time
+  than the change in the code itself.
+* "All the comments I've seen are worthless." This is probably the one with the most merit. Every
+  software developer has seen comments that provide no useful information. Fortunately, this problem
+  is solvable; writing solid documentation is not hard once you know how.
