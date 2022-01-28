@@ -257,3 +257,110 @@ they usually justify their behavior with one or more of these excuses:
 * "All the comments I've seen are worthless." This is probably the one with the most merit. Every
   software developer has seen comments that provide no useful information. Fortunately, this problem
   is solvable; writing solid documentation is not hard once you know how.
+
+
+## Chapter 13: Comments Should Describe Things that Aren't Obvious from the Code
+
+The purpose of comments is to record information that was in the mind of the developer when they
+wrote the code but that can't be expressed as code. That means comments should describe things that
+aren't obvious from the code. Documentation augments the code by providing information at a
+different level of detail.
+
+Some comments provide information at a lower, more detailed level than the code; these comments add
+precision by clarifying the exact meaning of the code. A good example are comments for variable
+declarations, arguments, and return types. The name and type in these declarationsare usually not
+very precise; comments can fill in missing detail such as units for a variable, whether null values
+are permitted, and certain properties that are always true (invariants).
+
+Higher-level comments enhance code by providing intuition. They omit details and help the reader to
+understand the overall intent and structure of the code.
+
+High-level comments are more difficult to write than lower-level comments because you must think
+about the code in a different way. This means taking a step back from the details, deciding which
+aspects of the system are most important, and finding a simple way to think about a complex entity.
+This is the essence of abstraction.
+
+One tricky kind of documentation is comments describing cross-module design decisions. Where
+possible, each design decision should be encapsulated in a module, but real systems inevitably end
+up with design decisions that affect multiple classes. It's important to document those, but where
+do you put that documentation so it will be discovered by developers working on any of the affected
+modules? There's no perfect solution. John recommends adding a section to a central file on design
+notes, then referring to that section wherever it is relevant.
+
+
+## Chapter 14: Choosing Names
+
+Good names for variables, methods, and other entities are a form of documentation: they make code
+easier to understand, reduce the need for other documentation, and make it easier to detect errors.
+Conversely, poor names increase the complexity of code and create ambiguities and misunderstandings
+that can result in bugs.
+
+When choosing a name, the goal is to create an image in the mind of the reader about the nature of
+the thing being named. The challenge is to find just a few words that capture the most important
+aspects of the entity.
+
+John presents three guidelines for naming:
+
+* Names should be precise. If a name is generic or vague, it's hard for readers to tell what the
+  name refers to.
+* Use names consistently. Consistent naming reduces cofnitive load: once the reader has seen the
+  name in one context, they can reuse this knowledge and instantly make assumptions when they see
+  the name in a different context.
+* Avoid extra words. Words that don't help to clarify the variable's meaning just add clutter.
+
+If it's hard to find a simple name that creates a clear image of the object, that's a hint that the
+underlying object doesn't have a clear design. The process of choosing good names can improve your
+design by exposing weaknesses.
+
+
+## Chapter 15: Write The Comments First
+
+Some developers put off writing documentation until the end of a project, after coding and unit
+testing are complete. This is a sure way to produce poor-quality documentation: by that time your
+memories of the design process will have become fuzzy and you'll be ready to move on to the next
+project, so you're likely to do add just enough comments to look respectable, or to skip commenting
+altogether.
+
+John recommends to write interface documentation before implementing the interface, and
+implementation comments while writing the implementation. This leads to better comments, but more
+importantly it improves the system design. Comments are the only way to fully capture abstractions.
+If you write comments describing the abstractions at the beginning, you can review and tune them
+before writing implementation code.
+
+Comments also serve as a canary in the coal mine of complexity. If it's difficult to write a comment
+that describes an abstraction completely and concisely, perhaps it's time to revisit that
+abstraction.
+
+
+## Chapter 16: Modifying Existing Code
+
+Software development is iterative and incremental, which means a system's design is constantly
+evolving. How do you keep the design from deteriorating and complexity from creeping in?
+
+The most important tool is to keep a strategic programming mindset. When changin existing code to
+fix a bug or add a feature, it's often tempting to make the smallest change that does what you need,
+but over time this approach accumulates special cases, dependencies, and other forms of complexity.
+Instead, with each change, think about whether the current design is still the best one. If not,
+take the time to refactor and improve the design.
+
+It's especially easy to forget updating comments that have been invalidated by code changes. To keep
+documentation up-to-date:
+
+* Always position comments close to the code they describe.
+* Avoid duplicating comments.
+* Put comments in the code, not just in the commit log, if future developers should see them.
+* Comments that are higher-level than the code are usually easier to maintain.
+
+
+## Chapter 17: Consistency
+
+Consistency is a powerful tool for reducing the complexity of a system. If similar things are done
+in a similar way and dissimilar things are done in different ways, developers can work more quickly
+with fewer mistakes.
+
+Some tips for ensuring consistency:
+
+* Document conventions such as coding style guides in a spot where developers are likely to see it.
+* Enforce consistency with automated checkers.
+* When you join an existing project, follow the conventions you see.
+* Don't take consistency so far that you make disimilar things look the same.
