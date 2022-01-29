@@ -364,3 +364,81 @@ Some tips for ensuring consistency:
 * Enforce consistency with automated checkers.
 * When you join an existing project, follow the conventions you see.
 * Don't take consistency so far that you make disimilar things look the same.
+
+
+## Chapter 18: Code Should be Obvious
+
+If code is obvious, someone can read the code quickly, and their first guess about the behavior or
+meaning of the code will be correct. This makes them faster and reduces the likelihood of
+misunderstanings and bugs.
+
+Some of the things that make code more obvious are precise and meaningful names, consistency,
+judicious use of whitespace, and comments to explain the bits of code that would otherwise be
+obscure.
+
+Event-driven programming, where handler functions are invoked based on events such as user input or
+network messages is one technique that can make code less obvious because it becomes hard to follow
+the flow of control. It helps to use comments to tell the reader when a handler is invoked.
+
+Another example are generic containers such as tuples. Custom types are usually better because they
+let you give names to the fields.
+
+
+## Chapter 19: Software Trends
+
+This chapter looks at some of the big software trends of the last decades through the ideas
+described in the book:
+
+* Object-oriented programming and interitance: Classes, private methods and fields, and interface
+  inheritance can help with information hiding and building abstractions. However, implementation
+  inheritance creates dependencies between the classes in a class hierarchy; use it with caution.
+* Agile development: iterative development is a good idea, but agile development can lead to a
+  tactical programming mindset, emphasizing features and ignoring abstractions.
+* Unit tests: a great idea both because they let programmers write tests for their own code, and
+  because having a test suite makes refactoring easier and safer.
+* Test-driven development: focuses attention on getting specific features working, rather than
+  finding the best design. There is one place where it makes sense: when fixing a bug, first add a
+  test that fails because of the bug, then fix it.
+* Design patterns: If a design pattern fites the situation, go ahead and use it. The risk with
+  design patterns is over-application. The notion that design patterns are good doesn't mean more
+  design patterns are better.
+
+
+## Chapter 20: Designing for Performance
+
+What if you're working on a system that needs to be fast? How should performance considerations
+affect the design process?
+
+If you try to optimize every statement for maximum speed, it'll slow down development and create a
+lot of unnecessary complexity. On the other hand, if you completely ignore performance issues it's
+easy to end up with a lot of inefficiencies spread throughout the code; it'll be hard to come back
+later and improve the performance because there is no single improvement that will have much impact.
+The best approach is something between these extremes, where you use basic knowledge of performance
+to chosse design alternatives that are "naturally efficient" yet also clean and simple. The key is
+to  develop and awareness of how the relative speed of common operations such as dynamic memory
+allocation, cache misses, accessing flash storage, or a round-trip message exchange across a
+network.
+
+If your system is too slow, don't rush off and make performance tweaks based on intuitions about
+what's slow. Always measure performance before and after implementing optimizations to make sure
+you're not adding complexity unless it provides a significant speedup.
+
+If you find you need to redesign an existing piece of code to make it faster, the way to do it is
+to design around the critical path. Start by asking yourself what is the smallest amount of code
+that muse be executed to carry out the desired task in the common case. Disregard any existing code
+structure, and ignore any special cases. Let's call this the "ideal code."
+
+The next step is to look for a new design that comes as close as possible to the ideal while still
+having a clean structure. You can apply all of the design ideas from the previous chapters of this
+book, but with the additional constraints of keeping the ideal code mostly intact.
+
+
+## Chapter 21: Decide What Matters
+
+One of the most important elements of good software design is separating what matters from what
+doesn't matter. Structure software systems around the things that matter. For example, if
+performance really matters for a module, its design should be structured around speeding up the
+common case as explained in the previous chapter.
+
+The phrase "good taste" describes the ability to distinguish what's important from what isn't. Good
+taste is an important part of being a good software designer.
