@@ -27,6 +27,10 @@ Chapter 1, page 12, talking about city planners:
 > comfort of wishes, familiar superstitions, oversimplifications, and symbols,
 > and have not yet embarked upon the adventure of probing the real world.
 
+Chapter 17, page 334:
+
+> We expect too much of new buildings, and too little of ourselves.
+
 
 ## John Ousterhout: A Philosophy of Software Design
 
@@ -48,3 +52,10 @@ Chapter 3, page 14-15:
 Chapter 10, page 79:
 
 > one of my favorite sayings: "code that hasn't been executed doesn't work"
+
+
+## Andreas Kling: Commute talk Youtube videos
+
+https://youtu.be/gZ2gBVzIjBU?t=320
+
+> Whatever happened to this old hacker spirit, where we would just build stuff?
