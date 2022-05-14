@@ -11,7 +11,7 @@ evolves, complexity accumulates and it becomes harder for programmers to keep al
 factors in their minds as they modify the system. This slows down development and leads to bugs,
 which slow down development even more.
 
-There are two approaches to fighting complexity. one is to eliminate complexity by making code
+There are two approaches to fighting complexity. One is to eliminate complexity by making code
 simpler and more obvious. The second is to encapsulate it; this is called modular design. The book
 discusses both.
 
