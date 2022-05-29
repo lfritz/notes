@@ -210,7 +210,7 @@ and handled at a low level, for example by retrying an operation, so the module'
 to handle it. This results in deeper modules since it reduces the module's interface and adds
 functionality.
 
-The third technique is exception aggregation. The diea is so refactor your code to handle many
+The third technique is exception aggregation. The idea is to refactor your code to handle many
 exceptions in one place instead of writing many individual handlers.
 
 Finally, in some cases it's best to simply crash the application instead of invoking error handling.
