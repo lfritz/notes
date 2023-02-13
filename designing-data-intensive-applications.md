@@ -484,7 +484,7 @@ development is serializable snapshot isolation (SSI), which uses optimistic
 locking to allow transactions to proceed without blocking until they commit.
 
 
-### Chapter 8: The Trouble with Distribued Systems
+### Chapter 8: The Trouble with Distributed Systems
 
 When you’re writing a program on a single computer, there is no fundamental
 reason why it should be flaky: when the hardware is working correctly,
