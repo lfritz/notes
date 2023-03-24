@@ -152,7 +152,7 @@ encode it as some kind of self-contained sequence of bytes. Many programming
 languages come with built-in support for encoding and decoding data structures
 (e.g. pickle in Python). These libraries are convenient, but they have some
 deep problems: they’re language-specific, they can easily open up security
-holes, and versioning is usualy an afterthought. It’s generally a bad idea
+holes, and versioning is usually an afterthought. It’s generally a bad idea
 to use them for anything other than very transient purposes.
 
 JSON, XML, and CSV are widely-used textual formats. They are widely-supported
@@ -185,7 +185,7 @@ rules that allow for forward and backward compatibility.
 The most common ways of dataflow are dataflow through applications, dataflow
 through services, and message-passing dataflow.
 
-When you deploy a nwe version of your application, you usually replace all of
+When you deploy a new version of your application, you usually replace all of
 its code, but not its data. This is sometimes summed up as “data outlives
 code.” An obvious consequence is that we often need forward compatibility
 for databases. However, if we deploy services with rolling upgrades, we can
